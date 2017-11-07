@@ -11,10 +11,7 @@ $.getJSON(URL, function (data) {
         return {
             x: months,
             y: months.map(function (month) {
-                return parseInt(el[month]);
-                if (parseInt(el[month]) == null) {
-                    parseInt(el[month]) = 0;
-                };
+                return parseInt(el[month] || "0");
             }),
             mode: 'lines',
             connectgaps: true,
